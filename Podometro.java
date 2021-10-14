@@ -210,9 +210,16 @@ public class Podometro {
      *  
      */    
     public void reset() {
-
-        
-
-    }
+        sexo = MUJER;
+        altura = 0;
+        longitudZancada = 0;
+        totalPasosLaborables = 0;
+        totalPasosSabado = 0;
+        totalPasosDomingo = 0;
+        totalDistanciaSemana = 0;
+        totalDistanciaFinSemana = 0;
+        tiempo = 0;
+        caminatasNoche = 0;
+    } 
 
 }
