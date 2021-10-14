@@ -122,18 +122,27 @@ public class Podometro {
         }
     } 
     
-     /**
+    /**
      * Muestra en pantalla la configuración del podómetro
-     * (altura, sexo y longitud de la zancada)
-     * 
-     * (ver enunciado)
-     *  
+     * (altura, sexo y longitud de la zancada) 
      */
     public void printConfiguracion() {
-
-        
-
-    }
+        double alturaMetros = altura / 100; //variable local
+        String nombreSexo;
+        double zancadaMetros = longitudZancada / 100; 
+        if (sexo == HOMBRE){
+            nombreSexo = "HOMBRE";
+        }
+        else { //(sexo == MUJER)
+            nombreSexo = "MUJER";
+        }
+        System.out.println("Configuración del podómetro");
+        System.out.println("***************************");
+        System.out.println("Altura: " + alturaMetros + " mtos");
+        System.out.println("Sexo: " + nombreSexo);
+        System.out.println("Longitud zancada: " + zancadaMetros + " mtos");
+        System.out.println();
+    } 
 
     /**
      * Muestra en pantalla información acerca de la distancia recorrida,
