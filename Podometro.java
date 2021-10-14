@@ -34,13 +34,14 @@ public class Podometro {
     private int caminatasNoche; //Nro. de caminatas (paseos) dados a partir de las 21h en toda la semana
     
     /**
+     * 
      * Inicializa el podómetro con la marca indicada por el parámetro.
      * El resto de atributos se ponen a 0 y el sexo, por defecto, es mujer
      */
-    public Podometro() {
-
-        
-    }
+    public Podometro(String queMarca)    {
+      marca = queMarca;
+      sexo = MUJER; //El resto de atributos empezaran con un valor 0 por defecto
+    } 
 
     /**
      * accesor para la marca
