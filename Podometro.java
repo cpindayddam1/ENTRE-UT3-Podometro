@@ -174,13 +174,35 @@ public class Podometro {
      *  Calcula y devuelve un String que representa el nombre del día
      *  en el que se ha caminado más pasos - "SÁBADO"   "DOMINGO" o  "LABORABLES"
      */
-    public void diaMayorNumeroPasos() {
-
-         
-
+    public String diaMayorNumeroPasos() {
+        String resul ="";
+        int aux1 = totalPasosLaborables;
+        int aux2 = totalPasosSabado;
+        int aux3 = totalPasosDomingo;
+        if (aux1 > aux2 && aux1 > aux3){
+            resul = "LABORABLES";
+        }
+        else if (aux2 > aux1 && aux2 > aux3){
+            resul = "SÁBADO";
+        }
+        else if (aux3 > aux1 && aux3 > aux2){
+            resul = "DOMINGO";
+        }
+        else if (aux1 == aux2 && aux1 > aux3){
+            resul = "LABORABLES   SABADO";
+        }
+        else if (aux1 == aux3 && aux1 > aux2){
+            resul = "LABORABLES  DOMINGO";
+        }
+        else if (aux2 == aux3 && aux2 > aux1){
+            resul = "SABADO  DOMINGO";
+        }
+        else if (aux1 == aux2 && aux1 ==aux3){
+            resul = "LABORABLES SÁBADO  DOMINGO";
+        }
+        return resul;
     }
-    
-    
+      
     /**
      * Restablecer los valores iniciales del podómetro
      * Todos los atributos se ponen a cero salvo el sexo
