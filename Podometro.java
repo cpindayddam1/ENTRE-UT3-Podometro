@@ -72,25 +72,55 @@ public class Podometro {
         }
     } 
 
-     /**
+    /**
      *  Recibe cuatro parámetros que supondremos correctos:
      *    pasos - el nº de pasos caminados
      *    dia - nº de día de la semana en que se ha hecho la caminata 
-     *              (1 - Lunes, 2 - Martes - .... - 6 - Sábado, 7 - Domingo)
+     *    (1 - Lunes, 2 - Martes - .... - 6 - Sábado, 7 - Domingo)
      *    horaInicio – hora de inicio de la caminata
      *    horaFin – hora de fin de la caminata
      *    
      *    A partir de estos parámetros el método debe realizar ciertos cálculos
-     *    y  actualizará el podómetro adecuadamente  
-     *   
-     *   (leer enunciado del ejercicio)
+     *    y  actualizará el estado del podómetro adecuadamente  
      */
     public void registrarCaminata(int pasos, int dia, int horaInicio,
                             int horaFin) {
-
-       
-
-    }
+        double distanciaHoy = pasos * (longitudZancada/100000); //km
+        int aux = horaFin - horaInicio;
+        int auxHoras = aux / 100;
+        int aux2 = aux % 100;
+        int auxMinutos;
+         if(aux2 >= 60){
+            auxMinutos = aux2 - 40;
+        }
+        else{ // aux2 < 60
+            auxMinutos = aux2;
+        }
+        
+        tiempo = (auxHoras * 60) + auxMinutos;
+        
+        switch(dia){
+            case 1:
+            case 2:
+            case 3:
+            case 4:
+            case 5:     totalPasosLaborables += pasos;
+                    break;
+            case SABADO:     totalPasosSabado += pasos;
+                        totalDistanciaFinSemana += distanciaHoy;
+                    break;
+            case DOMINGO:     totalPasosDomingo += pasos;
+                        totalDistanciaFinSemana += distanciaHoy;
+                    break;
+            //No hace falta el default ya que se asume que los parametros
+            //actuales son correctos
+        }
+        totalDistanciaSemana += distanciaHoy;
+ 
+        if(horaInicio >= 2100){
+            caminatasNoche++;
+        }
+    } 
     
      /**
      * Muestra en pantalla la configuración del podómetro
