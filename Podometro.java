@@ -44,14 +44,11 @@ public class Podometro {
     } 
 
     /**
-     * accesor para la marca
-     *  
+     * ACCESOR para la marca
      */
-    public  void  getMarca() {
-
-         
-
-    }
+    public String getMarca() {
+        return marca;    
+    } 
 
     /**
      * Simula la configuración del podómetro.
