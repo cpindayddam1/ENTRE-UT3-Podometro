@@ -3,8 +3,9 @@
  * acerca de los pasos, distancia, ..... que una persona
  * ha dado en una semana. 
  * 
- * @author    - pon aquí tu nombre - 
+ * @author    - Christhoper Pinday Delgado - 
  */
+
 public class Podometro {
     
 
@@ -21,7 +22,7 @@ public class Podometro {
      * accesor para la marca
      *  
      */
-    public      getMarca() {
+    public  void  getMarca() {
 
          
 
@@ -93,7 +94,7 @@ public class Podometro {
      *  Calcula y devuelve un String que representa el nombre del día
      *  en el que se ha caminado más pasos - "SÁBADO"   "DOMINGO" o  "LABORABLES"
      */
-    public String diaMayorNumeroPasos() {
+    public void diaMayorNumeroPasos() {
 
          
 
